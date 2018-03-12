@@ -29,14 +29,18 @@ int main()
 void rewrite(int * inputArray, int * outputArray, int arrayLength){
     int i;
     for(i = 0; i < arrayLength; i++){
-        *(outputArray + i) = *(inputArray + i);
+        if(*(inputArray + i) >= 0){
+            *(outputArray + i) = *(inputArray + i);
+        } else {
+            *(outputArray + i) = 0;
+        }
     }
 }
 
 void fillIntArray (int * arrayToFill, int arrayLength){
     int i;
     for(i = 0; i < arrayLength; i++){
-        *(arrayToFill + i) = rand() % 20;
+        *(arrayToFill + i) = (rand() % 20) - 5;
     }
 }
 
