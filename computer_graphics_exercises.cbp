@@ -31,6 +31,51 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="code/01.txt" />
+		<Unit filename="code/ex_01.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/ex_01.h" />
+		<Unit filename="code/ex_02.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/ex_02.h" />
+		<Unit filename="code/ex_03.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/ex_03.h" />
+		<Unit filename="code/ex_04.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/ex_04.h" />
+		<Unit filename="code/ex_05.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/ex_05.h" />
+		<Unit filename="code/ex_06.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/ex_06.h" />
+		<Unit filename="code/ex_07.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/ex_07.h" />
+		<Unit filename="code/ex_08.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/ex_08.h" />
+		<Unit filename="code/ex_09.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/ex_09.h" />
+		<Unit filename="code/ex_10.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/ex_10.h" />
+		<Unit filename="code/simple_array_lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="code/simple_array_lib.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
