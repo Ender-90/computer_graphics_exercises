@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <time.h>
 #include <stdlib.h>
 
 #include "ex_02.h"
@@ -22,4 +21,5 @@ void showComplex(complexNumb c){
         printf(" - %fi", (c.imaginary*(-1)));
     }
 
+    printf("\n");
 }

@@ -1,4 +1,3 @@
-#include <stdio.h>
 
 float power(int a, int n){
 

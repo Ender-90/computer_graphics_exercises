@@ -16,6 +16,6 @@ void fillIntArray (int * arrayToFill, int arrayLength){
     srand(time(NULL));
     int i;
     for(i = 0; i < arrayLength; i++){
-        *(arrayToFill + i) = rand() % 10;
+        *(arrayToFill + i) = rand() % 15;
     }
 }
