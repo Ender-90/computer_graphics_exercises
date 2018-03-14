@@ -1,22 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char max_char(FILE * file, int * n);
-
-int main()
-{
-    FILE * fPtr;
-    int n = 5;
-    fPtr = fopen("01.txt", "r");
-
-    printf("\n%c", max_char(fPtr, &n));
-    printf("\n%d", n);
-
-    fclose(fPtr);
-
-    return 0;
-}
-
 char max_char(FILE * file, int * n){
 
     int counterArr[256] = {0};

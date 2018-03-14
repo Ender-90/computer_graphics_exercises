@@ -10,6 +10,9 @@
 #include "code/ex_05.h"
 #include "code/ex_06.h"
 #include "code/ex_07.h"
+#include "code/ex_08.h"
+#include "code/ex_09.h"
+#include "code/ex_10.h"
 
 void exerOneTest();
 void exerTwoTest();
@@ -18,7 +21,9 @@ void exerFourTest();
 void exerFiveTest();
 void exerSixTest();
 void exerSevenTest();
-
+void exerEightTest();
+void exerNineTest();
+void exerTenTest();
 
 int main(){
 
@@ -29,6 +34,9 @@ int main(){
     exerFiveTest();
     exerSixTest();
     exerSevenTest();
+    exerEightTest();
+    exerNineTest();
+    exerTenTest();
 
     return 0;
 
@@ -168,4 +176,59 @@ void exerSevenTest(){
     showArray(secondArray, size);
 
     printf("\n\n");
+}
+
+exerEightTest(){
+
+    // Exercise no. 8 test
+
+    printf("Exercise no. 8 \n\n");
+
+int * firstArray;
+    int size = 10;
+
+    firstArray = calloc(size, sizeof(int));
+
+    fillIntArray(firstArray, size);
+    showArray(firstArray, size);
+    printf("%f", averageOfIntArray(firstArray, size));
+
+    printf("\n\n");
+}
+
+void exerNineTest(){
+
+    // Exercise no. 9 test
+
+    printf("Exercise no. 9 \n\n");
+
+    char inputArray[] = {'k', 'a', 'j', 'a', 'k'};
+    printf("%d", palindrome(&inputArray, 5));
+
+    printf("\n\n");
+}
+
+void exerTenTest(){
+
+ // Exercise no. 10 test
+
+    printf("Exercise no. 10 \n\n");
+
+    FILE * fPtr;
+    int n = 5;
+    fPtr = fopen("code/01.txt", "r");
+
+    if(fPtr == NULL){
+        printf("No file!");
+    }
+
+    printf("\n%c", max_char(fPtr, &n));
+    printf("\n%d", n);
+
+    fclose(fPtr);
+
+    return 0;
+
+    printf("\n\n");
+
 }

@@ -1,14 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int palindrome (char * inputArray, int arrayLength);
-int main()
-{
-    char inputArray[] = {'k', 'a', 'j', 'a', 'k'};
-
-    printf("%d", palindrome(&inputArray, 5));
-    return 0;
-}
 
 int palindrome (char * inputArray, int arrayLength){
 
