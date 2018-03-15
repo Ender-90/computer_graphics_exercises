@@ -227,8 +227,6 @@ void exerTenTest(){
 
     fclose(fPtr);
 
-    return 0;
-
     printf("\n\n");
 
 }
