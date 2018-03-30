@@ -28,9 +28,9 @@ cartesianPoint sphericalToCartesian(sphericalPoint point){
 
     cartesianPoint tmp;
 
-    tmp.x = point.p*cos(point.phi)*cos(point.theta);
-    tmp.y = point.p*sin(point.phi)*sin(point.theta);
-    tmp.z = point.p*cos(point.phi);
+    tmp.x = point.rho*cos(point.phi)*cos(point.theta);
+    tmp.y = point.rho*sin(point.phi)*sin(point.theta);
+    tmp.z = point.rho*cos(point.phi);
 
     return tmp;
 
@@ -40,13 +40,37 @@ sphericalPoint toSpherical(cartesianPoint point){
 
     sphericalPoint tmp;
 
-    tmp.p = sqrt(point.x*point.x + point.y*point.y + point.z*point.z);
-    tmp.phi = (tmp.p == 0) ? 0 : asin(point.z / tmp.p);
+    tmp.rho = sqrt(point.x*point.x + point.y*point.y + point.z*point.z);
     tmp.theta = (point.x == 0) ? 0 : atan( point.y/point.x);
+
+    if(point.z == 0)
+        tmp.phi = M_PI / 2;
+    else
+        tmp.phi = atan(sqrt(point.x*point.x + point.y*point.y)/point.z);
 
     return tmp;
 }
 
-void displayCartesian(cartesianPoint point);
-void displayCylidrical(cylindricalPoint point);
-void displaySpherical(sphericalPoint point);
+void displayCartesian(cartesianPoint point){
+
+    printf("\nPoint in Cartesian coordinate system: \n");
+    printf("Coordinate X: %f\n", point.x);
+    printf("Coordinate Y: %f\n", point.y);
+    printf("Coordinate Z: %f\n", point.z);
+}
+
+void displayCylidrical(cylindricalPoint point){
+
+    printf("\nPoint in cylidrical coordinate system: \n");
+    printf("Radial distance R: %f\n", point.r);
+    printf("Azimuth  Theta: %f\n", point.theta);
+    printf("Height Z: %f\n", point.z);
+}
+
+void displaySpherical(sphericalPoint point){
+
+    printf("\nPoint in spherical coordinate system: \n");
+    printf("Radial distance Rho: %f\n", point.rho);
+    printf("Inclination Phi: %f\n", point.phi);
+    printf("Azimuth Theta: %f\n", point.theta);
+}

@@ -18,7 +18,7 @@ typedef struct {
 
 typedef struct {
 
-    double p;
+    double rho;
     double phi;
     double theta;
 
