@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "libraries/point_lib.h"
+#include "libraries/graphicMath.h"
 
 int main()
 {
