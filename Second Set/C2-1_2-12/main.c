@@ -6,7 +6,7 @@
 int main()
 {
 
-    cartesianPoint cartPoint = { 2, 4, 5};
+    cartesianPoint cartPoint = { 1, 2, 3};
     displayCartesian(cartPoint);
 
     cylindricalPoint cylinPoint;
