@@ -31,10 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="libraries/point_lib.c">
+		<Unit filename="libraries/graphicMath.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="libraries/point_lib.h" />
+		<Unit filename="libraries/graphicMath.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

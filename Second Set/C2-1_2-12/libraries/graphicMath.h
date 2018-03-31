@@ -42,4 +42,23 @@ void displayCartesian(cartesianPoint point);
 void displayCylidrical(cylindricalPoint point);
 void displaySpherical(sphericalPoint point);
 
+// Vector definitions
 
+typedef union {
+    double vec[3];
+    struct {
+        double x, y, z;
+    };
+} vectorThreeDim;
+
+typedef union {
+    double vec[2];
+    struct {
+        double x, y;
+    };
+} vectorTwoDim;
+
+// Vector operations
+
+double vectorThreeLength(vectorThreeDim v);
+double vectorTwoLength(vectorTwoDim);

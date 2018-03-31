@@ -3,8 +3,16 @@
 #include <math.h>
 #include "libraries/graphicMath.h"
 
+void exOne();
+
 int main()
 {
+    exOne();
+
+    return 0;
+}
+
+void exOne(){
 
     cartesianPoint cartPoint = { 1, 2, 3};
     displayCartesian(cartPoint);
@@ -17,5 +25,4 @@ int main()
     spherPoint = toSpherical(cartPoint);
     displaySpherical(spherPoint);
 
-    return 0;
 }
