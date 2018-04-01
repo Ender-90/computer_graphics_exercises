@@ -88,6 +88,9 @@ void displaySpherical(sphericalPoint point){
 //                          //
 //////////////////////////////
 
+
+// 3-D vectors
+
 void displayVectorThree(vectorThreeDim v){
 
     printf("\nVector AB:\n");
@@ -96,6 +99,50 @@ void displayVectorThree(vectorThreeDim v){
     printf("\nY: %f",v.y);
     printf("\nZ: %f\n",v.z);
 }
+double vectorThreeLength(vectorThreeDim v){
+
+    return sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+}
+vectorThreeDim normalizeVectorThree(vectorThreeDim v){
+
+    printf("\nNormalizing three-dim vector...");
+
+    vectorThreeDim tmp;
+    tmp.x = v.x / vectorThreeLength(v);
+    tmp.y = v.y / vectorThreeLength(v);
+    tmp.z = v.z / vectorThreeLength(v);
+
+    printf(" Done.\n");
+    return tmp;
+}
+vectorThreeDim addVectorsThree(vectorThreeDim v1, vectorThreeDim v2){
+     printf("\nAdding two three-dim vector...");
+
+    vectorThreeDim tmp;
+    tmp.x = v1.x + v2.x;
+    tmp.y = v1.y + v2.y;
+    tmp.z = v1.z + v2.z;
+
+    printf(" Done.\n");
+    return tmp;
+}
+double scalarMultVectorsThree(vectorThreeDim v1, vectorThreeDim v2){
+    return v1.x*v2.x + v1.y*v2.y + v1.z*v2.z;
+}
+vectorThreeDim vectorMultVectorsThree(vectorThreeDim v1, vectorThreeDim v2){
+    printf("\nAxB for two three-dim vector...");
+
+    vectorThreeDim tmp;
+    tmp.x = v1.y*v2.z - v1.z*v2.y;
+    tmp.y = v1.x*v2.z - v1.z*v2.x;
+    tmp.z = v1.x*v2.y - v1.y*v2.x;
+
+    printf(" Done.\n");
+    return tmp;
+}
+
+// 2-D vectors
+
 void displayVectorTwo(vectorTwoDim v){
 
     printf("\nVector AB:\n");
@@ -103,32 +150,29 @@ void displayVectorTwo(vectorTwoDim v){
     printf("\nX: %f",v.x);
     printf("\nY: %f\n",v.y);
 }
-
-double vectorThreeLength(vectorThreeDim v){
-
-    return sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
-}
-
 double vectorTwoLength(vectorTwoDim v){
 
     return sqrt(v.x*v.x + v.y*v.y);
 }
-
-vectorThreeDim normalizeVectorThree(vectorThreeDim v){
-
-    vectorThreeDim tmp;
-    for(int i = 0 ; i < 2; i++){
-        tmp.vec[i] = v.vec[i] * vectorThreeLength(v);
-    }
-
-    return tmp;
-}
 vectorTwoDim normalizeVectorTwo(vectorTwoDim v){
 
-    vectorTwoDim tmp;
-    for(int i = 0 ; i < 1; i++){
-        tmp.vec[i] = v.vec[i] * vectorTwoLength(v);
-    }
+    printf("\nNormalizing two-dim vector...");
 
+    vectorTwoDim tmp;
+    tmp.x = v.x / vectorTwoLength(v);
+    tmp.y = v.y / vectorTwoLength(v);
+
+    printf(" Done.\n");
+    return tmp;
+}
+
+vectorTwoDim addVectorsTwo(vectorTwoDim v1, vectorTwoDim v2){
+     printf("\nAdding two two-dim vector...");
+
+    vectorTwoDim tmp;
+    tmp.x = v1.x + v2.x;
+    tmp.y = v1.y + v2.y;
+
+    printf(" Done.\n");
     return tmp;
 }

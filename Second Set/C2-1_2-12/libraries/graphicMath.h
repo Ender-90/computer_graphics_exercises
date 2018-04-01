@@ -44,27 +44,26 @@ void displaySpherical(sphericalPoint point);
 
 // Vector definitions
 
-typedef union {
-    double vec[3];
-    struct {
-        double x, y, z;
-    };
+
+
+typedef struct{
+    double x, y, z;
 } vectorThreeDim;
 
-typedef union {
-    double vec[2];
-    struct {
-        double x, y;
-    };
+typedef struct{
+    double x, y;
 } vectorTwoDim;
 
 // Operations on vectors
 
 void displayVectorThree(vectorThreeDim v);
-void displayVectorTwo(vectorTwoDim v);
-
 double vectorThreeLength(vectorThreeDim v);
-double vectorTwoLength(vectorTwoDim);
-
 vectorThreeDim normalizeVectorThree(vectorThreeDim v);
+vectorThreeDim addVectorsThree(vectorThreeDim v1, vectorThreeDim v2);
+double scalarMultVectorsThree(vectorThreeDim v1, vectorThreeDim v2);
+vectorThreeDim vectorMultVectorsThree(vectorThreeDim v1, vectorThreeDim v2);
+
+void displayVectorTwo(vectorTwoDim v);
+double vectorTwoLength(vectorTwoDim);
 vectorTwoDim normalizeVectorTwo(vectorTwoDim v);
+vectorTwoDim addVectorsTwo(vectorTwoDim v1, vectorTwoDim v2);
