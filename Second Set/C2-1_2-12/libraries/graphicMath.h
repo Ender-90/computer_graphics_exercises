@@ -58,7 +58,13 @@ typedef union {
     };
 } vectorTwoDim;
 
-// Vector operations
+// Operations on vectors
+
+void displayVectorThree(vectorThreeDim v);
+void displayVectorTwo(vectorTwoDim v);
 
 double vectorThreeLength(vectorThreeDim v);
 double vectorTwoLength(vectorTwoDim);
+
+vectorThreeDim normalizeVectorThree(vectorThreeDim v);
+vectorTwoDim normalizeVectorTwo(vectorTwoDim v);

@@ -1,6 +1,12 @@
 #include "graphicMath.h"
 #include <math.h>
 
+//////////////////////////////////////////////////////
+//                                                  //
+//  Functions for converting and display points     //
+//                                                  //
+//////////////////////////////////////////////////////
+
 cartesianPoint cylindricalToCartesian(cylindricalPoint point){
 
     cartesianPoint tmp;
@@ -74,4 +80,55 @@ void displaySpherical(sphericalPoint point){
     printf("Azimuth Theta: %f%c\n", point.theta, DEGREE);
     printf("Inclination Phi: %f%c\n", point.phi, DEGREE);
 
+}
+
+//////////////////////////////
+//                          //
+// Operations on vectors    //
+//                          //
+//////////////////////////////
+
+void displayVectorThree(vectorThreeDim v){
+
+    printf("\nVector AB:\n");
+    printf("\n(Remember, vector attributes are differences between points A and B!)\n");
+    printf("\nX: %f",v.x);
+    printf("\nY: %f",v.y);
+    printf("\nZ: %f\n",v.z);
+}
+void displayVectorTwo(vectorTwoDim v){
+
+    printf("\nVector AB:\n");
+    printf("\n(Remember, vector attributes are differences between points A and B!)\n");
+    printf("\nX: %f",v.x);
+    printf("\nY: %f\n",v.y);
+}
+
+double vectorThreeLength(vectorThreeDim v){
+
+    return sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+}
+
+double vectorTwoLength(vectorTwoDim v){
+
+    return sqrt(v.x*v.x + v.y*v.y);
+}
+
+vectorThreeDim normalizeVectorThree(vectorThreeDim v){
+
+    vectorThreeDim tmp;
+    for(int i = 0 ; i < 2; i++){
+        tmp.vec[i] = v.vec[i] * vectorThreeLength(v);
+    }
+
+    return tmp;
+}
+vectorTwoDim normalizeVectorTwo(vectorTwoDim v){
+
+    vectorTwoDim tmp;
+    for(int i = 0 ; i < 1; i++){
+        tmp.vec[i] = v.vec[i] * vectorTwoLength(v);
+    }
+
+    return tmp;
 }

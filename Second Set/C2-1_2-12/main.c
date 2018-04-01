@@ -4,10 +4,12 @@
 #include "libraries/graphicMath.h"
 
 void exOne();
+void exTwo();
 
 int main()
 {
     exOne();
+    exTwo();
 
     return 0;
 }
@@ -24,5 +26,13 @@ void exOne(){
     sphericalPoint spherPoint;
     spherPoint = toSpherical(cartPoint);
     displaySpherical(spherPoint);
+
+}
+
+void exTwo(){
+
+    vectorThreeDim testVector = { 4, -2, 3};
+    displayVectorThree(testVector);
+
 
 }
