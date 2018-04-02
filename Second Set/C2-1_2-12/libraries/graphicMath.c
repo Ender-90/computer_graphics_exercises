@@ -1,5 +1,6 @@
 #include "graphicMath.h"
 #include <math.h>
+#include <stdio.h>
 
 //////////////////////////////////////////////////////
 //                                                  //
@@ -165,7 +166,6 @@ vectorTwoDim normalizeVectorTwo(vectorTwoDim v){
     printf(" Done.\n");
     return tmp;
 }
-
 vectorTwoDim addVectorsTwo(vectorTwoDim v1, vectorTwoDim v2){
      printf("\nAdding two two-dim vector...");
 
@@ -175,4 +175,131 @@ vectorTwoDim addVectorsTwo(vectorTwoDim v1, vectorTwoDim v2){
 
     printf(" Done.\n");
     return tmp;
+}
+double calculateAngleBetweenVectorsTwo(vectorTwoDim v1, vectorTwoDim v2){
+
+    double angleV1, angleV2;
+
+    printf("\nCalculating angle of first vector...");
+
+    if(v1.x == 0){
+        angleV1 = (v1.y == 0 ? 0 : (v1.y > 0 ? M_PI / 2 : (3*M_PI) / 2));
+    } else {
+        angleV1 = atan2(v1.y, v1.x);
+    }
+    printf(" Done.\n");
+
+    printf("\nCalculating angle of second vector...");
+
+    if(v2.x == 0){
+        angleV2 = (v2.y == 0 ? 0 : (v2.y > 0 ? M_PI / 2 : (3*M_PI) / 2));
+    } else {
+        angleV2 = atan2(v2.y, v2.x);
+    }
+    printf(" Done.\n");
+
+    printf("\n\nAngle between vectors is equal to: %f%c\n\n", (angleV1 - angleV2) * (180/M_PI), DEGREE);
+    return (angleV1 - angleV2) * (180/M_PI);
+
+}
+
+//////////////////////////////
+//                          //
+// Operations on matrices   //
+//                          //
+//////////////////////////////
+
+// Display matrices
+
+void displayM22(matrix2x2 m){
+    printf("\n\nMatrix 2x2:\n");
+    int i, j;
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 2; j++){
+            printf("%f ",m.val[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void displayM23(matrix2x3 m){
+    printf("\n\nMatrix 2x3:\n");
+    int i, j;
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 3; j++){
+            printf("%f ",m.val[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void displayM32(matrix3x2 m){
+    printf("\n\nMatrix 3x2:\n");
+    int i, j;
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 2; j++){
+            printf("%f ",m.val[i][j]);
+        }
+        printf("\n");
+    }
+}
+void displayM33(matrix3x3 m){
+    printf("\n\nMatrix 3x3:\n");
+    int i, j;
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
+            printf("%f ",m.val[i][j]);
+        }
+        printf("\n");
+    }
+}
+void displayM44(matrix4x4 m){
+    printf("\n\nMatrix 4x4:\n");
+    int i, j;
+    for(i = 0; i < 4; i++){
+        for(j = 0; j < 4; j++){
+            printf("%f ",m.val[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Other operations
+
+matrix3x3 multMatrices23x32(matrix2x3 m23, matrix3x2 m32){
+
+    printf("\n\nMultiplication of two matrices...");
+
+    matrix3x3 result = {0};
+
+    int i, j, k;
+
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
+            for(k = 0; k < 2; k++){
+                result.val[j][i] += m23.val[k][i]*m32.val[j][k];
+            }
+        }
+    }
+
+        return result;
+}
+
+matrix2x2 multMatrices32x23(matrix3x2 m32, matrix2x3 m23){
+
+    printf("\n\nMultiplication of two matrices...");
+
+    matrix2x2 result = {0};
+
+    int i, j, k;
+
+    for(i = 0; i < 2; i++){
+        for(j = 0; j < 2; j++){
+            for(k = 0; k < 3; k++){
+                result.val[i][j] += m32.val[k][j]*m23.val[i][k];
+            }
+        }
+    }
+
+        return result;
 }
