@@ -11,11 +11,10 @@ void exFive();
 
 int main()
 {
-//    exOne();
-//    exTwo();
-//    exThree();
-//    exFour();
-
+    exOne();
+    exTwo();
+    exThree();
+    exFour();
     exFive();
 
     return 0;
